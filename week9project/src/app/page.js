@@ -1,4 +1,6 @@
-import Link from "next/link";
+import RegisterTabs from "./components/RegisterTabs";
+import { SignedIn } from "@clerk/nextjs";
+import HomePageIfSignedIn from "./components/HomePageIfSignedIn";
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
           LEGENDS)
         </strong>
       </h1>
+      {<SignedIn /> ? <RegisterTabs /> : <HomePageIfSignedIn />}
     </div>
   );
 }

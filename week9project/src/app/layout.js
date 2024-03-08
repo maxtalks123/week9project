@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import NavBar from "../app/components/NavBar";
+import { SignedIn } from "@clerk/nextjs";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,16 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <NavBar />
+          {/* <SignedIn>
+            <NavBar />
+          </SignedIn> */}
+          {<SignedIn /> ? (
+            <nav className="p-2 m-2 bg-red-800 text-white space-x-14 h-12 text-lg">
+              <Link href="/">Home page</Link>
+            </nav>
+          ) : (
+            <NavBar />
+          )}
           {children}
         </body>
       </html>
