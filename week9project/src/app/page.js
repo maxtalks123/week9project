@@ -1,5 +1,5 @@
 import RegisterTabs from "./components/RegisterTabs";
-import { SignedIn } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import HomePageIfSignedIn from "./components/HomePageIfSignedIn";
 
 export default function Home() {
@@ -11,7 +11,12 @@ export default function Home() {
           LEGENDS)
         </strong>
       </h1>
-      {<SignedIn /> ? <RegisterTabs /> : <HomePageIfSignedIn />}
+      <SignedIn>
+        <HomePageIfSignedIn />
+      </SignedIn>
+      <SignedOut>
+        <RegisterTabs />
+      </SignedOut>
     </div>
   );
 }
