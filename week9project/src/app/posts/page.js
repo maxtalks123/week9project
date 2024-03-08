@@ -16,7 +16,7 @@ export default async function posts() {
           </h3>
           <p>content: {allPosts.content}</p>
           <p>Likes: {allPosts.likes}</p>
-          <Link href="`/${userPosts.username}`">Visit this users profile</Link>
+          <Link href={`/${allPosts.username}`}>Visit this users profile</Link>
         </div>
       ))}
     </div>

@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import SubmitButton from "./SubmitButton";
 
 export default function NewPost({ username, userID }) {
-  console.log(userID);
   async function handleNewPost(formData) {
     "use server";
     const title = formData.get("title");

@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Link from "next/link";
-import { UserButton, SignInButton, auth } from "@clerk/nextjs";
+import { UserButton, SignInButton, auth, SignedIn } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +19,10 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <nav className="p-2 m-2 bg-red-800 text-white space-x-14 h-12 text-lg">
             <Link href="/">Home page</Link>
-            <Link href="/username">Your account</Link>
-            <Link href="/posts">All posts</Link>
-            <Link href="/createprofile">Make an account</Link>
+            <SignedIn>
+              <Link href="/posts">All posts</Link>
+              <Link href={`/${userId}`}>Your account</Link>
+            </SignedIn>
             {userId ? <UserButton /> : <SignInButton />}
           </nav>
           {children}

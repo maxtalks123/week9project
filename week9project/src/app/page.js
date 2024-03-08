@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div>
@@ -7,6 +9,11 @@ export default function Home() {
           LEGENDS)
         </strong>
       </h1>
+      <button>
+        <Link href="/createprofile">
+          Click here to make an account and get started
+        </Link>
+      </button>
     </div>
   );
 }

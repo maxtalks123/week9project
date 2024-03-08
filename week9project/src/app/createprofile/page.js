@@ -13,7 +13,7 @@ export default function makeProfile() {
     await sql`INSERT INTO users (bio, location, username) VALUES (${bio}, ${location}, ${username})`;
 
     revalidatePath("/createprofile");
-    redirect(`/${username}`);
+    redirect(`/users/${username}`);
   }
   return (
     <div className="bg-blue-400 m-2 p-2 flex flex-col items-center">
