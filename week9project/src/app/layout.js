@@ -1,8 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import Link from "next/link";
-import { UserButton, SignInButton, auth, SignedIn } from "@clerk/nextjs";
+import NavBar from "../app/components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,19 +11,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const { userId } = auth();
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <nav className="p-2 m-2 bg-red-800 text-white space-x-14 h-12 text-lg">
-            <Link href="/">Home page</Link>
-            <SignedIn>
-              <Link href="/posts">All posts</Link>
-              <Link href={`/${userId}`}>Your account</Link>
-            </SignedIn>
-            {userId ? <UserButton /> : <SignInButton />}
-          </nav>
+          <NavBar />
           {children}
         </body>
       </html>

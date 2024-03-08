@@ -2,15 +2,17 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import SubmitProfileButton from "../components/SubmitProfileButton";
+import { auth } from "@clerk/nextjs";
 
 export default function makeProfile() {
+  const { userId } = auth();
   async function handleMakeProfile(formData) {
     "use server";
     const bio = formData.get("bio");
     const location = formData.get("location");
     const username = formData.get("username");
 
-    await sql`INSERT INTO users (bio, location, username) VALUES (${bio}, ${location}, ${username})`;
+    await sql`INSERT INTO users (bio, location, username clerk_id) VALUES (${bio}, ${location}, ${username}, ${userId})`;
 
     revalidatePath("/createprofile");
     redirect(`/users/${username}`);
