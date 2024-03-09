@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 
 export default authMiddleware({
   publicRoutes: ["/"],
-  afterAuth(auth, req) {
+  afterAuth(auth) {
     if (!auth.userId) {
-      return redirectToSignIn({ returnBackUrl: req.url });
+      return redirectToSignIn({ returnBackUrl: "/" });
     }
     if (auth.userId && !auth.isPublicRoute) {
       return NextResponse.next();
