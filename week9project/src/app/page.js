@@ -15,7 +15,10 @@ export default function Home() {
       <SignedIn>
         <HomePageIfSignedIn />
       </SignedIn>
-      <SignOutRedirect />
+      <SignedOut>
+        <SignOutRedirect />
+      </SignedOut>
+
       {/* <SignedOut>
         <RegisterTabs />
       </SignedOut> */}
