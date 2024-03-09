@@ -5,9 +5,10 @@ export default authMiddleware({
   publicRoutes: ["/"],
   afterAuth(auth) {
     if (!auth.userId) {
-      return redirectToSignIn({
-        returnBackUrl: "https://week9project-iota.vercel.app/",
-      });
+      return "https://week9project-iota.vercel.app/";
+      // return redirectToSignIn({
+      //   returnBackUrl: "https://week9project-iota.vercel.app/",
+      // });
     }
     if (auth.userId && !auth.isPublicRoute) {
       return NextResponse.next();
