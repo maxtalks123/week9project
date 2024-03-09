@@ -1,22 +1,23 @@
-import { Protect, authMiddleware } from "@clerk/nextjs";
+import { authMiddleware } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 export default authMiddleware({
   publicRoutes: ["/"],
-  afterAuth(auth) {
-    if (!auth.userId) {
-      return Protect({
-        unauthenticatedURL: "https://week9project-iota.vercel.app/",
-      });
-      // return redirectToSignIn({
-      //   returnBackUrl: "https://week9project-iota.vercel.app/",
-      // });
-    }
-    if (auth.userId && !auth.isPublicRoute) {
-      return NextResponse.next();
-    }
-    return NextResponse.next();
-  },
+  // afterAuth(auth) {
+  //   if (!auth.userId) {
+  //I attempted to use the docs to return the homepage with radix on so can sign in there but couldnt get it working right.
+  // return Protect({
+  //   unauthenticatedURL: "https://week9project-iota.vercel.app/",
+  // });
+  //       return redirectToSignIn({
+  //         returnBackUrl: "https://week9project-iota.vercel.app/",
+  //       });
+  //     }
+  //     if (auth.userId && !auth.isPublicRoute) {
+  //       return NextResponse.next();
+  //     }
+  //     return NextResponse.next();
+  //   },
 });
 
 export const config = {
