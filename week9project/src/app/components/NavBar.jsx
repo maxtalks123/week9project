@@ -24,9 +24,9 @@ export default async function NavBar() {
         <Link href={`/users/${username}/newpost`}>Create New Post</Link>
         <Link href="/users">TSSMOK Users</Link>
       </SignedIn>
-      <SignedOut>
+      {/* <SignedOut>
         <SignIn>Sign in again here!</SignIn>
-      </SignedOut>
+      </SignedOut> */}
       {userId ? (
         <UserButton />
       ) : (
