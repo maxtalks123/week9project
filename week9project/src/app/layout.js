@@ -13,7 +13,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const { userId } = auth().protect({ unauthenticatedURL: "/" });
   return (
     <ClerkProvider>
       <html lang="en">
