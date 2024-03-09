@@ -22,7 +22,7 @@ export default async function NavBar() {
         <Link href="/posts">All posts</Link>
         <Link href={`/users/${username}`}>Your account</Link>
         <Link href={`/users/${username}/newpost`}>Create New Post</Link>
-        <Link href="/users">TSSMOK Users</Link>
+        <Link href="/users">TSSMSOL Users</Link>
       </SignedIn>
       {/* <SignedOut>
         <SignIn>Sign in again here!</SignIn>
