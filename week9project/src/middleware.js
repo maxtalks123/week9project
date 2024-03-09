@@ -1,11 +1,13 @@
-import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
+import { Protect, authMiddleware, redirectToSignIn } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 export default authMiddleware({
   publicRoutes: ["/"],
   afterAuth(auth) {
     if (!auth.userId) {
-      return "https://week9project-iota.vercel.app/";
+      return Protect({
+        unauthorisedURL: "https://week9project-iota.vercel.app/",
+      });
       // return redirectToSignIn({
       //   returnBackUrl: "https://week9project-iota.vercel.app/",
       // });
