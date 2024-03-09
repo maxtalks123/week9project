@@ -13,9 +13,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const { userId } = auth().protect({ unauthorisedURL: "/" });
   return (
     <ClerkProvider>
-      const {userId} = auth().protect({(unauthorisedURL = "/")})
       <html lang="en">
         <body className={inter.className}>
           <SignedIn>
