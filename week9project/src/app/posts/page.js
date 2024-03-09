@@ -22,7 +22,7 @@ export default async function posts() {
           <p className="m-2">content: {allPosts.content}</p>
           <p className="m-2">Likes: {allPosts.likes}</p>
           <Link
-            href={`/${allPosts.username}`}
+            href={`/users/${allPosts.username}`}
             className="p-1 m-1 border-4 border-white  bg-yellow-400 text-black rounded-md"
           >
             Visit this users profile
