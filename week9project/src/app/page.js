@@ -5,7 +5,7 @@ import HomePageIfSignedIn from "./components/HomePageIfSignedIn";
 export default function Home() {
   return (
     <div>
-      <h1>
+      <h1 className="text-2xl text-center m-8">
         <strong>
           This is the home page to TSSMSOL (The SECRET SOCIAL MEDIA SOCIETY OF
           LEGENDS)

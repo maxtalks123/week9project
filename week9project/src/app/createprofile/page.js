@@ -25,11 +25,23 @@ export default function makeProfile() {
         className="p-8 w-6/12 flex flex-col justify-center"
       >
         <label>Enter a bit about yourself</label>
-        <textarea name="bio" placeholder="What make you unique?"></textarea>
+        <textarea
+          name="bio"
+          placeholder="What make you unique?"
+          required
+        ></textarea>
         <label>Location</label>
-        <input name="location" placeholder="Where are you from?"></input>
+        <input
+          name="location"
+          placeholder="Where are you from?"
+          required
+        ></input>
         <label>Username</label>
-        <input name="username" placeholder="Enter a unique username"></input>
+        <input
+          name="username"
+          placeholder="Enter a unique username"
+          required
+        ></input>
         <SubmitProfileButton />
       </form>
     </div>

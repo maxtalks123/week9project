@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import SubmitButton from "./SubmitButton";
 
-export default function NewPost({ username, userID }) {
+export default function NewPost({ userID }) {
   async function handleNewPost(formData) {
     "use server";
     const title = formData.get("title");

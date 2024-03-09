@@ -21,6 +21,7 @@ export default async function NavBar() {
       <SignedIn>
         <Link href="/posts">All posts</Link>
         <Link href={`/users/${username}`}>Your account</Link>
+        <Link href={`/users/${username}/newpost`}>Create New Post</Link>
         <Link href="/users">TSSMOK Users</Link>
       </SignedIn>
       <SignedOut>

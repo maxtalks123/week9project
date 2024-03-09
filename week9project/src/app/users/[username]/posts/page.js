@@ -6,15 +6,28 @@ export default async function posts({ params }) {
   ).rows;
   return (
     <div>
-      <h1>Here is a list of all posts by {params.username}</h1>
+      <h1 className="text-3xl text-center">
+        Here is a list of all posts by: <strong>{params.username}</strong>
+      </h1>
       {userPosts.map((userPosts) => (
-        <div key={userPosts.id}>
-          <h2>Username: {userPosts.username}</h2>
+        <div
+          key={userPosts.id}
+          className=" bg-blue-600 rounded border-4 border-black w-1/4 inline-flex flex-col items-center text-white p-4 m-4"
+        >
+          <h2>
+            <strong>Username:</strong> {userPosts.username}
+          </h2>
           <h3>
-            Post title:<p>{userPosts.title}</p>
+            <strong>Post title:</strong>
+            <p>{userPosts.title}</p>
           </h3>
-          <p>content: {userPosts.content}</p>
-          <p>Likes: {userPosts.likes}</p>
+          <p>
+            <strong>Content: </strong>
+            {userPosts.content}
+          </p>
+          <p>
+            <strong>Likes:</strong> {userPosts.likes}
+          </p>
         </div>
       ))}
     </div>
