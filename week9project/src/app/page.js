@@ -14,9 +14,9 @@ export default function Home() {
       <SignedIn>
         <HomePageIfSignedIn />
       </SignedIn>
-      {/* <SignedOut>
+      <SignedOut>
         <RegisterTabs />
-      </SignedOut> */}
+      </SignedOut>
     </div>
   );
 }
