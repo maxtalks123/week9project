@@ -1,7 +1,7 @@
 import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
 
 export default authMiddleware({
-  publicRoutes: ["/"],
+  publicRoutes: ["/", "https://driven-husky-28.accounts.dev/sign-in"],
 });
 
 export const config = {
