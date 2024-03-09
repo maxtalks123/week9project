@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import NavBar from "../app/components/NavBar";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, auth } from "@clerk/nextjs";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
+      const {userId} = auth().protect({(unauthorisedURL = "/")})
       <html lang="en">
         <body className={inter.className}>
           <SignedIn>
