@@ -1,6 +1,7 @@
 import RegisterTabs from "./components/RegisterTabs";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import HomePageIfSignedIn from "./components/HomePageIfSignedIn";
+import { redirect } from "next/navigation";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <HomePageIfSignedIn />
       </SignedIn>
       <SignedOut>
+        {redirect("/")}
         <RegisterTabs />
       </SignedOut>
     </div>
