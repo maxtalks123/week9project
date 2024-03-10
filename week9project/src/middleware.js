@@ -1,7 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
-  publicRoutes: ["/"],
+  publicRoutes: ["/", "/createprofile"],
   // afterAuth(auth) {
   //   if (!auth.userId) {
   //I attempted to use the docs to return the homepage with radix on so can sign in there but couldnt get it working right.
